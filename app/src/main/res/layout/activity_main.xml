@@ -8,14 +8,12 @@
     android:paddingTop="8dp"
     android:background="#000000"
     tools:context=".MainActivity">
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:textSize="48sp"
-        android:background="#000000"
-        android:textColor="@color/white"
+        android:background="#efefef"
         android:id="@+id/txtInput"
         android:gravity="right|center_vertical"
         android:maxLength="12"
@@ -39,6 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtInput"
         android:gravity="fill">
 
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -46,41 +45,81 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/btnSeven"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
-                android:onClick="onChange"
+                android:text="del"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:onClick="delLastSymbol"
+                android:id="@+id/clear"/>
+
+            <Button
+                android:text="^"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:onClick="onOperator"
+                android:id="@+id/degree"/>
+
+            <Button
+                android:text="√"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:onClick="onOperator"
+                android:id="@+id/root"/>
+
+            <Button
+                android:text="="
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:onClick="onEqual"
+                android:id="@+id/onEqual"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
                 android:text="7"
-                />
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:onClick="onChange"
+                android:id="@+id/btnSeven"/>
 
             <Button
                 android:text="8"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:onClick="onChange"
-                android:id="@+id/btnEight"
-
-                />
+                android:id="@+id/btnEight"/>
 
             <Button
                 android:text="9"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:onClick="onChange"
                 android:id="@+id/btnNine"/>
 
             <Button
                 android:text="/"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:onClick="onOperator"
                 android:id="@+id/btnDivide"/>
         </TableRow>
@@ -93,37 +132,37 @@
 
             <Button
                 android:text="4"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:onClick="onChange"
                 android:id="@+id/btnFour"/>
 
             <Button
                 android:text="5"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:onClick="onChange"
                 android:id="@+id/btnFive"/>
 
             <Button
                 android:text="6"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:onClick="onChange"
                 android:id="@+id/btnSix"/>
 
             <Button
                 android:text="*"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:onClick="onOperator"
                 android:id="@+id/btnMultiply"/>
         </TableRow>
@@ -136,37 +175,37 @@
 
             <Button
                 android:text="1"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:onClick="onChange"
                 android:id="@+id/btnOne"/>
 
             <Button
                 android:text="2"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:onClick="onChange"
                 android:id="@+id/btnTwo"/>
 
             <Button
                 android:text="3"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:onClick="onChange"
                 android:id="@+id/btnThree"/>
 
             <Button
                 android:text="-"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:onClick="onOperator"
                 android:id="@+id/btnSubtract"/>
         </TableRow>
@@ -175,63 +214,60 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:gravity="center"
-
-            >
-
+            android:gravity="center">
 
             <Button
                 android:text="."
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:onClick="onDecimalPoint"
                 android:id="@+id/btnDecimal"/>
 
             <Button
                 android:text="0"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:onClick="onChange"
                 android:id="@+id/btnZero"/>
 
             <Button
                 android:text="CLR"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
-                android:onClick="delLastSymbol"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:onClick="onClear"
                 android:id="@+id/btnClear"/>
 
             <Button
                 android:text="+"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:backgroundTint="#333333"
-                android:background="@drawable/circle"
+                android:background="@drawable/button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:onClick="onOperator"
                 android:id="@+id/btnAdd"/>
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            >
+<!--        <TableRow-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="1">-->
 
-            <Button
-                android:id="@+id/btnEqual"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:background="@drawable/circle"
-                android:onClick="onEqual"
-                android:text="="
-                app:backgroundTint="#333333" />
-        </TableRow>
+<!--            <Button-->
+<!--                android:text="="-->
+<!--                android:background="@drawable/button"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:onClick="onEqual"-->
+<!--                android:id="@+id/btnEqual"/>-->
+<!--        </TableRow>-->
+
+
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

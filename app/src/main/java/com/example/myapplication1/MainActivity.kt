@@ -1,13 +1,11 @@
 package com.example.myapplication1
 
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
-
-
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import net.objecthunter.exp4j.ExpressionBuilder
+import androidx.appcompat.app.AppCompatActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -36,7 +34,6 @@ class MainActivity : AppCompatActivity() {
             txtInput.text = (view as Button).text
             stateError = false
         } else {
-
             txtInput.append((view as Button).text)
         }
 
@@ -54,16 +51,15 @@ class MainActivity : AppCompatActivity() {
 
 
     fun onOperator(view: View) {
-        if (lastNumeric && !stateError) {
-            txtInput.append((view as Button).text)
-            lastNumeric = false
-            lastDot = false
+        if (lastNumeric && !stateError && (view as Button).text != "√"  || ((view as Button).text == "√" && !lastNumeric)) {
+            txtInput.append((view as Button).text);
+            lastNumeric = false;
+            lastDot = false;
         }
     }
 
 
     fun delLastSymbol (view: View) {
-
         if(txtInput.text.isNotEmpty() && txtInput.length() != 1){
 
         if(lastDot){
@@ -74,6 +70,8 @@ class MainActivity : AppCompatActivity() {
 
         if(txtInput.text[txtInput.length() - 1] == '.'){
             lastDot = true
+        }else{
+            lastNumeric = true
         }
 
         }else if (txtInput.length() == 1){
@@ -120,19 +118,20 @@ class MainActivity : AppCompatActivity() {
         if (lastNumeric && !stateError) {
 
             val txt = txtInput.text.toString()
+            val calculate:Calculate = Calculate()
+            txtInput.text = calculate.getResult(txt).toString();
 
-            val expression = ExpressionBuilder(txt).build()
-            try {
-
-                val result = expression.evaluate()
-                txtInput.text = result.toString()
-                lastDot = true
-            } catch (ex: ArithmeticException) {
-
-                txtInput.text = "Error"
-                stateError = true
-                lastNumeric = false
-            }
+//            val expression = ExpressionBuilder(txt).build()
+//            try {
+//                val result = expression.evaluate()
+//                txtInput.text = result.toString()
+//                lastDot = true
+//            } catch (ex: ArithmeticException) {
+//
+//                txtInput.text = "Error"
+//                stateError = true
+//                lastNumeric = false
+//            }
         }
     }
 }
